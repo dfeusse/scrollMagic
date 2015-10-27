@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ScrollMagic #1 Setup</title>
+
+    <style>
+	    .row {
+	    	margin-top: 100px;
+	    	margin-bottom: 100px;
+	    }
+	    .col-md-4, .col-md-2, .col-md-6 {
+	    	background-color: steelblue;
+	    }
+	    .col-md-8, .col-md-10, .col-md-3 {
+	    	background-color: orange;
+	    }
+	    .active {
+	    	background-color: red;
+	    }
+        #white {
+            margin-top: 200px;
+            margin-bottom: 100px;
+        }
+	    #content {
+            margin-top:10px;
+	    	
+            position: fixed;
+            top: 0;
+            right: 150px;
+	    }
+        #p5canvas {
+            border: 3px solid black;
+            
+            height:100px;
+            width: 200px;
+            /*
+            background-color: black;
+            color: white;
+            */
+        }
+    </style>
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- ScrollMagic.js -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+    <!-- P5.js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.17/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+</head>
+<body>
+    
+	<div class="container">
+        <!-- row -->
+        <div class="row" id="white">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <!-- row -->
+      	<div class="row" id="one">
+        	<div class="col-md-4 paragraph" id="contentOne">
+                <div id="whatsVirus">
+            		<p>
+                        •   What is a virus?
+                        •   Viruses are tiny micro-organisms that require another living host - an animal, plant or even an amoeba - in order to survive. Although they have DNA or RNA, it’s debatable whether they are even “alive.”
+                    </p>
+                </div>
+        	</div>
+        	<div class="col-md-8 paragraph">
+        		visual
+        	</div>
+        </div>
+        <!-- row -->
+      	<div class="row" id="two">
+      		<div class="col-md-2 paragraph" id="contentTwo">
+                <div id="virusGroupedIntoFamilies">
+                    <p>
+                		• Viruses can be grouped into families based on similar traits. [link to wikipedia]
+                        •   Let’s simplify this and think about a family of viruses as a color. A family might be know by the color blue, but there can be many shades of blue. 
+                    </p>
+                </div>
+        	</div>
+            <div class="col-md-10 paragraph">
+                visual
+            </div>
+        </div>
+        <!-- row -->
+      	<div class="row" id="three">
+        	<div class="col-md-8 paragraph">
+        		visual
+        	</div>
+        	<div class="col-md-4 paragraph" id="contentThree">
+                <div id="sayHaveHost">
+                    <p>
+                        •   Let’s say we have a host. It might be a monkey, a seal, a bat or a human. [1]
+                        •   Footnote 1: Viruses are found in many living beings, not just mammals. They’re found in plants, bacteria, fungi and other types of animals. Viruses need to enter a living cell in order to replicate and survive. [link to wikipedia or other] <- what link?
+                    </p>
+                </div>
+        	</div>
+        </div>
+        <!-- row -->
+      	<div class="row" id="four">
+            <div class="col-md-3 paragraph">
+                visual
+            </div>
+        	<div class="col-md-6 paragraph" id="contentFour">
+        		<div id="hostAsCircle">
+                    <p>
+                        •   For now, let’s think of a host as a circle
+                        •   [Show animation of animals turning into a circle, with dots moving toward the circumference]
+                    </p>
+                </div>
+        	</div>
+        	<div class="col-md-3 paragraph">
+        		visual
+        	</div>
+        </div>
+        <!-- row -->
+      	<div class="row" id="five">
+      		<div class="col-md-4 paragraph" id="contentFive">
+        		<div id="randomStochastic">
+                    <p>
+                        •   Things we observe can be random (stochastic)  [link to wikipedia, simon’s article]
+                        •   [Show an example of something random that’s more tangible. Jen, ideas?? Is a graph of a random noise signal “tangible” enough? Flipping a coin?]
+
+                    </p>
+                </div>
+        	</div>
+        	<div class="col-md-8 paragraph">
+        		visual
+        	</div>
+        </div>
+        <!-- row -->
+      	<div class="row" id="six">
+        	<div class="col-md-8 paragraph">
+        		visual
+        	</div>
+        	<div class="col-md-4 paragraph" id="contentSix">
+        		<div id="predictableTangible">
+                    <p>
+                        •   [Show an example of something predictable that’s more tangible?? A sine wave or other more regular pattern?]
+                        •   Ability to create rules that predict future states of the model
+                    </p>
+                </div>
+        	</div>
+        </div>
+        <!-- row -->
+      	<div class="row" id="white">
+        	<div class="col-md-12">
+        	</div>
+        </div>
+        <!-- row -->
+        <div class="row" id="content">
+            <div id="p5canvas">
+            </div>
+        </div>
+    </div> <!-- end of container -->
+
+	<script>
+
+        // -------------------------------------------------------------
+
+        // P5.js 
+
+        // -------------------------------------------------------------
+
+        var canvasText = 'initial, not in a div';
+
+        function setup() {
+            var myCanvas = createCanvas(300,300);
+            myCanvas.parent('p5canvas');
+
+            text(canvasText, 10, 20);
+        }
+
+        function draw() {
+            //ellipse(20, 20, 25, 25);
+        }
+
+
+        // -------------------------------------------------------------
+
+        // ScrollMagic.js
+
+        // -------------------------------------------------------------
+
+    	// init controller
+    	var controller = new ScrollMagic.Controller();
+
+        function dan(trigger, toggle) {
+            new ScrollMagic.Scene({triggerElement: trigger, duration: $("div" + trigger).height() })
+                .setClassToggle(toggle, "active") // add class toggle
+                .addIndicators() // add indicators (requires plugin)
+                .addTo(controller)
+                .on("enter", function (e) {
+                    
+                    console.log('div width: ' + $( ".active" ).width());
+                    console.log('div height: ' + $( ".active" ).height());
+                    console.log($( ".active" ).find().prevObject[0].firstElementChild.id)
+                    console.log($( ".active" ).find().prevObject[0].innerText)
+
+                    console.log("div left/start: " + $( ".active" ).offset().left );
+                    console.log("div right/end: " + 
+                        (parseInt($( ".active" ).offset().left) +  parseInt($( ".active" ).width()) )
+                        )
+
+                    $( "#p5canvas" ).html( 
+                        //canvasText = 'scroll into div';
+                        canvasTest = "div name: " + $( ".active" ).find().prevObject[0].firstElementChild.id
+                        + '<br>' + 
+                        "div left/start: " + $( ".active" ).offset().left
+                        + '<br>' + 
+                        "div right/end: " + 
+                        (parseInt($( ".active" ).offset().left) +  parseInt($( ".active" ).width()))
+                    );
+
+                    console.log('----------------------')
+                })
+                .on("leave", function (e) {
+                    $( "#p5canvas" ).empty();
+                });
+        };
+
+        dan("#one", "#contentOne");
+        dan("#two", "#contentTwo");
+        dan("#three", "#contentThree");
+        dan("#four", "#contentFour");
+        dan("#five", "#contentFive");
+        dan("#six", "#contentSix");
+
+    </script>
+
+</body>
+</html>
