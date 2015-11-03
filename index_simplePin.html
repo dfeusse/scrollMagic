@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>simple pinning</title>
+
+    <style>
+	    body {
+	    	background-color: black; 
+	    }
+	    .spacer.s2 {
+    		min-height: 300px;
+		}
+		.spacer {
+    		text-align: center;
+    	}
+
+    	#pin1, #pin2 {
+	    	padding-left:100px;
+	    	opacity: .99;
+		    color: #ffa;
+		    position: relative;
+		    text-align: left;
+    	}
+    	p {
+    		font-size: 25;
+    	}
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+</head>
+
+<body>
+
+
+	<div id="content-wrapper">
+		<div id="example-wrapper">
+			<div class="scrollContent">
+				<section id="titlechart">
+
+					<script>
+						// init controller
+						var controller = new ScrollMagic.Controller();
+					</script>
+				</section>
+				<section class="demo">
+					<div class="spacer s2"></div>
+					<div id="trigger1" class="spacer s0"></div>
+					<div id="pin1" class="box2 blue">
+						<p>Stay where you are (at least for a while).</p>
+						<p>more text blah blah</p>
+					</div>
+					<div class="spacer s2"></div>
+					<script>
+						$(function () { // wait for document ready
+							// build scene
+							var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 300})
+											.setPin("#pin1")
+											.addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
+											.addTo(controller);
+						});
+					</script>
+				</section>
+				
+				<section class="demo">
+					<div class="spacer s2"></div>
+					<div id="trigger2" class="spacer s0"></div>
+					<div id="pin2" class="box2 blue">
+						<p>Second paragraph</p>
+						<p>second paragraph continued</p>
+					</div>
+					<div class="spacer s2"></div>
+					<script>
+						$(function () { // wait for document ready
+							// build scene
+							var scene = new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 200})
+											.setPin("#pin2")
+											.addIndicators({name: "2 (duration: 200)"}) // add indicators (requires plugin)
+											.addTo(controller);
+						});
+					</script>
+				</section>		
+				
+				<div class="spacer s_viewport"></div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
